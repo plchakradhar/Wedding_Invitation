@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sage: #8A9A7B;
+  --cream: #F6EEDF;
+  --olive: #3F4A35;
+  --gold: #C9A66B;
+  --blush: #E8C9C0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: var(--olive);
+  background-color: #212421;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Subtle paper grain texture pattern across cream sections */
+.paper-texture {
+  background-color: #F6EEDF;
+  background-image: radial-gradient(#3F4A35 0.5px, transparent 0.5px), radial-gradient(#3F4A35 0.5px, #F6EEDF 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  background-blend-mode: multiply;
+}
+
+/* Smooth golden shimmer sweep */
+.gold-shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.gold-shimmer-sweep::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 70%
+  );
+  transform: rotate(25deg);
+  animation: shimmerSweep 3.2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmerSweep {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  60% { transform: translateX(120%) rotate(25deg); }
+  100% { transform: translateX(120%) rotate(25deg); }
+}
+
+/* Glass buttons */
+.glass-pill {
+  background: rgba(246, 238, 223, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 166, 107, 0.5);
+  box-shadow: 0 8px 24px rgba(63, 74, 53, 0.12);
+}
+
+.glass-pill:hover {
+  background: rgba(246, 238, 223, 0.95);
+  border-color: rgba(201, 166, 107, 0.85);
+}
+
+/* Card gold border */
+.card-gold-border {
+  border: 1px solid rgba(201, 166, 107, 0.45);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Swiper custom pagination */
+.swiper-pagination-bullet {
+  background: #C9A66B !important;
+  opacity: 0.45 !important;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  background: #9E7B44 !important;
+  opacity: 1 !important;
+  width: 20px !important;
+  border-radius: 6px !important;
+}
+
+/* Leaflet container fixes */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  z-index: 10;
+}
+
+/* Hide scrollbar on swiper / horizontally scrollable containers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
