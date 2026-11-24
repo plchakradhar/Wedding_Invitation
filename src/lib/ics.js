@@ -26,7 +26,7 @@ export function generateIcsFile() {
     'BEGIN:VALARM',
     'TRIGGER:-P1D',
     'ACTION:DISPLAY',
-    'DESCRIPTION:Reminder: Engagement Ceremony of Srikar & Yamini tomorrow!',
+    'DESCRIPTION:Reminder: Engagement Ceremony of Yamini & Srikar tomorrow!',
     'END:VALARM',
     'END:VEVENT',
     'END:VCALENDAR',

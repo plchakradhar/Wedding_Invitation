@@ -493,7 +493,7 @@ def create_og_image():
         f_date = ImageFont.load_default()
 
     draw.text((W // 2, 130), "YOU ARE CORDIALLY INVITED TO THE ENGAGEMENT CEREMONY OF", fill=(138, 154, 123), anchor="mm", font=f_sub)
-    draw.text((W // 2, 260), "Srikar  &  Yamini", fill=(63, 74, 53), anchor="mm", font=f_names)
+    draw.text((W // 2, 260), "Yamini  &  Srikar", fill=(63, 74, 53), anchor="mm", font=f_names)
     draw.line([(W // 2 - 120, 340), (W // 2 + 120, 340)], fill=(201, 166, 107), width=2)
     draw.text((W // 2, 400), "SAVE THE DATE  •  DECEMBER 03, 2026", fill=(201, 166, 107), anchor="mm", font=f_date)
     draw.text((W // 2, 499), "SSR Convention, Payakapuram, Vijayawada", fill=(63, 74, 53), anchor="mm", font=f_sub)

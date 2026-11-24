@@ -4,9 +4,7 @@ import { weddingConfig } from '../data/config';
 
 export function useAudio() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(() => {
-    return localStorage.getItem('wedding_music_muted') === 'true';
-  });
+  const [isMuted, setIsMuted] = useState(false);
   const musicRef = useRef(null);
   const chimeRef = useRef(null);
   const zipRef = useRef(null);
@@ -16,11 +14,20 @@ export function useAudio() {
       src: [weddingConfig.audio.src],
       html5: true,
       loop: true,
-      volume: 0,
+      volume: weddingConfig.audio.volume || 0.65,
       preload: true,
-      onplay: () => setIsPlaying(true),
-      onpause: () => setIsPlaying(false),
-      onstop: () => setIsPlaying(false),
+      onplay: () => {
+        setIsPlaying(true);
+        setIsMuted(false);
+      },
+      onpause: () => {
+        setIsPlaying(false);
+        setIsMuted(true);
+      },
+      onstop: () => {
+        setIsPlaying(false);
+        setIsMuted(true);
+      },
     });
 
     chimeRef.current = new Howl({
@@ -46,27 +53,26 @@ export function useAudio() {
     if (!musicRef.current) return;
     if (musicRef.current.playing()) return;
 
-    const targetVolume = isMuted ? 0 : weddingConfig.audio.volume;
+    musicRef.current.volume(weddingConfig.audio.volume || 0.65);
     musicRef.current.play();
-    musicRef.current.fade(0, targetVolume, 2000);
-  }, [isMuted]);
+    setIsPlaying(true);
+    setIsMuted(false);
+  }, []);
 
   const toggleMusic = useCallback(() => {
     if (!musicRef.current) return;
 
-    if (isMuted) {
-      setIsMuted(false);
-      localStorage.setItem('wedding_music_muted', 'false');
-      if (!musicRef.current.playing()) {
-        musicRef.current.play();
-      }
-      musicRef.current.fade(musicRef.current.volume(), weddingConfig.audio.volume, 800);
-    } else {
+    if (musicRef.current.playing()) {
+      musicRef.current.pause();
+      setIsPlaying(false);
       setIsMuted(true);
-      localStorage.setItem('wedding_music_muted', 'true');
-      musicRef.current.fade(musicRef.current.volume(), 0, 800);
+    } else {
+      musicRef.current.volume(weddingConfig.audio.volume || 0.65);
+      musicRef.current.play();
+      setIsPlaying(true);
+      setIsMuted(false);
     }
-  }, [isMuted]);
+  }, []);
 
   const playChime = useCallback(() => {
     if (!isMuted && chimeRef.current) {
@@ -75,10 +81,10 @@ export function useAudio() {
   }, [isMuted]);
 
   const playZipSound = useCallback(() => {
-    if (!isMuted && zipRef.current) {
+    if (zipRef.current) {
       zipRef.current.play();
     }
-  }, [isMuted]);
+  }, []);
 
   return {
     isPlaying,

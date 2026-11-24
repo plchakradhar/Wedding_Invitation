@@ -8,17 +8,6 @@ export const weddingConfig = {
 
   // Couple Information
   groom: {
-    firstName: "Srikar",
-    fullName: "Amara Srikar",
-    teluguName: "చిరంజీవి శ్రీకర్",
-    parents: "Only son of Maharaja Sri Amara Venkateswara Rao & Smt. Suneetha",
-    parentsTelugu: "మహారాజశ్రీ అమరా వెంకటేశ్వరరావు - శ్రీమతి సునీత గార్ల ఏకైక పుత్రుడు",
-    hometown: "Vetapalem, Bapatla District",
-    hometownTelugu: "బాపట్ల జిల్లా, వేటపాలెం వాస్తవ్యులు",
-    qualifications: "M.S., in USA - OSU",
-    university: "Oklahoma State University",
-  },
-  bride: {
     firstName: "Yamini",
     fullName: "Potturi Yamini",
     teluguName: "చిరంజీవి లక్ష్మీసౌభాగ్యవతి యామిని",
@@ -29,12 +18,23 @@ export const weddingConfig = {
     qualifications: "M.S., in USA - GSU",
     university: "Georgia State University",
   },
+  bride: {
+    firstName: "Srikar",
+    fullName: "Amara Srikar",
+    teluguName: "చిరంజీవి శ్రీకర్",
+    parents: "Only son of Maharaja Sri Amara Venkateswara Rao & Smt. Suneetha",
+    parentsTelugu: "మహారాజశ్రీ అమరా వెంకటేశ్వరరావు - శ్రీమతి సునీత గార్ల ఏకైక పుత్రుడు",
+    hometown: "Vetapalem, Bapatla District",
+    hometownTelugu: "బాపట్ల జిల్లా, వేటపాలెం వాస్తవ్యులు",
+    qualifications: "M.S., in USA - OSU",
+    university: "Oklahoma State University",
+  },
 
   // Date, Muhurtham & Time
   weddingDateTimeISO: "2026-12-03T11:00:00+05:30",
   displayDate: "Thursday, December 3, 2026",
   displayDateTelugu: "ది. 03-12-2026 గురువారము",
-  muhurtham: "Morning 11:00 AM to 12:30 PM",
+  muhurtham: "Morning 10:30 AM to 1:00 PM",
   muhurthamTelugu: "ఉదయం 11.00 నుండి 12-30 ని॥లలోపు",
   lunchFeast: "Afternoon 12:00 PM onwards",
   lunchFeastTelugu: "మధ్యాహ్నం 12.00 గంటలకు",
@@ -66,8 +66,8 @@ export const weddingConfig = {
   },
 
   // Social & Sharing
-  hashtag: "#SrikarWedsYamini",
-  whatsappShareText: "✨ శ్రీరస్తు - శుభమస్తు! You're cordially invited to celebrate the Engagement Ceremony of Srikar & Yamini on Dec 3, 2026 at MSR Convention, Vijayawada. Tap to open the digital invitation: ",
+  hashtag: "#YaminiWedsSrikar",
+  whatsappShareText: "✨ శ్రీరస్తు - శుభమస్తు! You're cordially invited to celebrate the Engagement Ceremony of Yamini & Srikar on Dec 3, 2026 at MSR Convention, Vijayawada. Tap to open the digital invitation: ",
 
   // Program Timeline (Frame 8)
   timeline: [
@@ -103,7 +103,7 @@ export const weddingConfig = {
       time: "12:30 PM",
       title: "Akshintalu Blessings & Portraits",
       titleTelugu: "అక్షింతలతో ఆశీర్వచనం & కుటుంబ చిత్రాలు",
-      description: "Join us on the stage to shower sacred yellow akshintalu and blessings upon Srikar & Yamini.",
+      description: "Join us on the stage to shower sacred yellow akshintalu and blessings upon Yamini & Srikar.",
       icon: "Camera",
     },
   ],
