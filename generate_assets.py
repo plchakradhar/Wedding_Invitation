@@ -159,14 +159,14 @@ def create_crest():
 
     # Try to load a nice font or draw elegant calligraphy
     try:
-        font_large = ImageFont.truetype("arial.ttf", 36)
-        font_small = ImageFont.truetype("arial.ttf", 14)
+        font_large = ImageFont.truetype(r"C:\Windows\Fonts\georgia.ttf", 42)
+        font_small = ImageFont.truetype(r"C:\Windows\Fonts\georgia.ttf", 13)
     except:
-        font_large = ImageFont.load_default()
-        font_small = ImageFont.load_default()
+        font_large = ImageFont.truetype("arial.ttf", 38)
+        font_small = ImageFont.truetype("arial.ttf", 13)
 
-    # Monogram "S & Y" (Srikar & Yamini)
-    draw.text((cx, cy - 15), "S  &  Y", fill=(63, 74, 53, 255), anchor="mm", font=font_large)
+    # Monogram "Y & S" (Yamini & Srikar)
+    draw.text((cx, cy - 15), "Y  &  S", fill=(45, 55, 35, 255), anchor="mm", font=font_large)
 
     # Flourish divider
     draw.line([(cx - 45, cy + 18), (cx + 45, cy + 18)], fill=(201, 166, 107, 220), width=1)
@@ -496,7 +496,7 @@ def create_og_image():
     draw.text((W // 2, 260), "Srikar  &  Yamini", fill=(63, 74, 53), anchor="mm", font=f_names)
     draw.line([(W // 2 - 120, 340), (W // 2 + 120, 340)], fill=(201, 166, 107), width=2)
     draw.text((W // 2, 400), "SAVE THE DATE  •  DECEMBER 03, 2026", fill=(201, 166, 107), anchor="mm", font=f_date)
-    draw.text((W // 2, 460), "MSR Convention, Payakapuram, Vijayawada", fill=(63, 74, 53), anchor="mm", font=f_sub)
+    draw.text((W // 2, 499), "SSR Convention, Payakapuram, Vijayawada", fill=(63, 74, 53), anchor="mm", font=f_sub)
 
     og_path = os.path.join(PUBLIC_DIR, "og-image.jpg")
     img.save(og_path, "JPEG", quality=90)

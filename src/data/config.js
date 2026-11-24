@@ -55,7 +55,7 @@ export const weddingConfig = {
 
   // Venue & Location
   venue: {
-    name: "SSR Convention",
+    name: "MSR Convention",
     nameTelugu: "ఎస్.ఎస్.ఆర్. కన్వెన్షన్",
     subName: "Opp. Prakash Nagar Cheerala Market",
     address: "Main Road, Opp. Prakash Nagar Cheerala Market, Payakapuram, Vijayawada - 520015",
